@@ -30,3 +30,37 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int is_prime(int n) {
+    if (n == 2||n==3) {
+        return 1;
+    }
+    int flag = 0;
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0)
+            flag++;
+    }
+    if (flag == 0)
+        return 1;
+    else
+        return 0;
+}
+int main() {
+    int n;
+    cin >> n;
+    int temp =n;
+    for (int i = n-2; i >=n/2; i--) {
+        if (is_prime(i)) {
+            if (i < temp&&is_prime(n-i))
+                temp = i;
+        }
+    }
+    cout << temp*(n-temp)<<endl;
+    
+    return 0;
+}
