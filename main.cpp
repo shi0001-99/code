@@ -22,7 +22,7 @@ int main() {
             arr[i][j] = a;
         }
     }
-    for (int j = 0; j <= m; j++) {
+    for (int j = 0; j <m; j++) {
         for (int i = n - 1; i >= 0; i--) {
             cout << arr[i][j]<<" ";
         }
