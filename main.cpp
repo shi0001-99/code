@@ -64,3 +64,29 @@ int main() {
     
     return 0;
 }
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int max(int a, int b, int c) {
+    if (a > b)
+        swap(a, b);
+    if (b > c)
+        swap(b, c);
+    if (a > b)
+        swap(a, b);
+    return c;
+}
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    double q = max(a, b, c);
+    double w = max(a + b, b, c);
+    double e = max(a, b, b + c);
+    double final = q / (w * e);
+    
+    cout << fixed << setprecision(3) << final;
+    return 0;
+}
