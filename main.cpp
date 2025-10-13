@@ -189,3 +189,12 @@ if (num % 2 == 0) {
             if()
         }
     }
+}
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 2; i <= n; i++) {
+
+    }
+    return 0;
+}
