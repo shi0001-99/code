@@ -182,3 +182,10 @@ int huiwen(int n) {
         num += 1;
         n /= 10;
     }
+if (num % 2 == 0) {
+        for (int i = 1; i <= n / 2; i++) {
+            int a = n % pow(10,i);
+            int b=n%10**（
+            if()
+        }
+    }
