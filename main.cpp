@@ -134,3 +134,27 @@ int main() {
     cout << sum(n);
     return 0;
 }
+
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int A(int a,int b) {
+    if (a==0) {
+        return b+1;
+    }
+    else if (b==0) {
+        return A(a - 1, 1);
+    }
+    else {
+        return A(a - 1, A(a, b - 1));
+    }
+}
+int main() {
+    int a, b;
+    cin >> a >> b;
+    cout << A(a, b)<<endl;
+    return 0;
+}
