@@ -176,3 +176,9 @@ int is_prime(int n) {
     }
     return 1;
 }
+int huiwen(int n) {
+    int num = 0;
+    while (n != 0) {
+        num += 1;
+        n /= 10;
+    }
