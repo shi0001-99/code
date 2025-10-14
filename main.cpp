@@ -240,3 +240,14 @@ int main() {
 #include <iomanip>
 #include <algorithm>
 #include <cmath>
+using namespace std;
+char match(char x) {
+    if (x == 'A')
+        return 'T';
+    if (x == 'T')
+        return 'A';
+    if (x == 'C')
+        return 'G';
+    if (x == 'G')
+        return 'C';
+}
