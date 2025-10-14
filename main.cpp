@@ -251,3 +251,12 @@ char match(char x) {
     if (x == 'G')
         return 'C';
 }
+int main() {
+    char arr[270];
+    
+    for (int i = 1; i <= 257; i++) {
+        cin >> arr[i];
+    }
+    cout << arr[2];
+    return 0;
+}
