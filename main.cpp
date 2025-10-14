@@ -218,4 +218,19 @@ int is_prime(int n) {
     }
     return 1;
 }
-
+int main() {
+    int n;
+    cin >> n;
+    int flag = 0;
+    for (int i = 2; i < n - 1; i++) {
+        if (is_prime(i) && is_prime(i + 2)) {
+            cout << i << " " << i + 2 << endl;
+            flag++;
+        }
+    }
+    if (!flag)
+    {
+        cout << "empty";
+    }
+    return 0;
+}
