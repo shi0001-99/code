@@ -177,24 +177,24 @@ int is_prime(int n) {
     return 1;
 }
 int huiwen(int n) {
-    int num = 0;
+    int original_n = n;
+    int reversed_n = 0;
     while (n != 0) {
-        num += 1;
+        reversed_n = reversed_n * 10 + n % 10;
         n /= 10;
     }
-if (num % 2 == 0) {
-        for (int i = 1; i <= n / 2; i++) {
-            int a = n % pow(10,i);
-            int b=n%10**（
-            if()
-        }
-    }
+    return original_n == reversed_n;
 }
+
 int main() {
     int n;
     cin >> n;
-    for (int i = 2; i <= n; i++) {
-
+    int num = 0;
+    for (int i = 11; i <= n; i++) {
+        if (is_prime(i) && huiwen(i)) {
+            num++;
+        }
     }
+    cout << num;
     return 0;
 }
