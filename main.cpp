@@ -277,3 +277,30 @@ int main() {
     return 0;
 }
 
+
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        int a,  b, c;
+        cin >> a >> b >> c;
+        sum += a * b * c;
+    }
+    int p = sum / m;
+    if (sum % m)
+        p++;
+    if (sum % m)
+        cout << p << " " << sum % m;
+    else
+        cout << p << " " <<  m;
+
+    return 0;
+}
