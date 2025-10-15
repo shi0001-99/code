@@ -304,3 +304,17 @@ int main() {
 
     return 0;
 }
+
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    cout << 8 << " "<< (long long)12 * (n - 2) << " "<< (long long)6 * (n - 2) * (n - 2);
+    return 0;
+}
