@@ -341,3 +341,29 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+    for (int i = 1; ; i++) {
+        int x = i;
+        bool valid = true;
+        for (int j = 0; j < 5; j++) {
+            if ((x - 1) % 5 != 0) {
+                valid = false;
+                break;
+            }
+            x = (x - 1) / 5 * 4;
+        }
+        if (valid && x > 0) {
+            cout << i << endl;  // 输出：3121
+            break;
+        }
+    }
+    
+    return 0;
+}
