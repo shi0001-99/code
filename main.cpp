@@ -318,3 +318,26 @@ int main() {
     cout << 8 << " "<< (long long)12 * (n - 2) << " "<< (long long)6 * (n - 2) * (n - 2);
     return 0;
 }
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+    
+    for (int i = 1;; i++)
+    {
+        double a = (i -  1) / 5.0 ; double a1 = a * 4;
+        double b = (a1 - 1) / 5.0 ; double b1 = b * 4;
+        double c = (b1 - 1) / 5.0 ; double c1 = c * 4;
+        double d = (c1 - 1) / 5.0 ; double d1 = d * 4;
+        double e = (d1 - 1) / 5.0 ; double e1 = e * 4;
+        if (a == (int)a && b == (int)b && c == (int)c && d == (int)d && e == (int)e) {
+            cout << i << " " << e1;
+            break;
+        }
+    }
+    return 0;
+}
