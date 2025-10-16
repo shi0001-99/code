@@ -398,3 +398,33 @@ int main() {
 	cout << 495;
 	return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int f(int n) {
+	int sum = 1;
+	if (n == 1)
+		return 1;
+
+	else
+		for (int i = 1; i < n; i++) {
+			
+			sum += f(n - i);
+			
+		}
+	return sum;
+	
+}
+int main() {
+	int n;
+	cin >> n;
+	if (n < 1 || n>31) {
+		cout << -1;
+		return 0;
+	}
+	cout << f(n);
+	return 0;
+}
