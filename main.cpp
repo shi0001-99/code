@@ -428,3 +428,23 @@ int main() {
 	cout << f(n);
 	return 0;
 }
+
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n, price, m;
+	cin >> n >> price >> m;
+	int num = m / price;
+	int left = num;
+	while  (left >=n) {
+		
+		num += left / n;
+		left = left - (left/ n) * n + left / n;
+	}
+	cout << num;
+	return 0;
+}
