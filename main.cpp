@@ -448,3 +448,27 @@ int main() {
 	cout << num;
 	return 0;
 }
+
+#include<iostream>
+using namespace std;
+
+long long combination(int n, int r) {
+    
+    if (r == 0 || r == n) return 1;
+
+   
+    if (r > n - r) r = n - r;
+
+    long long result = 1;
+    for (int i = 1; i <= r; i++) {
+        result = result * (n - i + 1) / i;
+    }
+    return result;
+}
+
+int main() {
+    int n, r;
+    cin >> n >> r;
+    cout << combination(n, r);
+    return 0;
+}
