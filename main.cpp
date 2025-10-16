@@ -367,3 +367,34 @@ int main() {
     
     return 0;
 }
+
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	if (n % 111 == 0) {
+		cout << "NOT";
+		return 0;
+	}
+	
+	while (n != 495){
+		cout << n << " ";
+		int a = n % 10;
+		int b = (n / 10) % 10;
+		int c = n / 100;
+		if (a > b)swap(a, b);
+		if (b > c)swap(b, c);
+		if (a > b)swap(a, b);
+		int max = a + b * 10 + c * 100;
+		int min = a * 100 + b * 10 + c;
+		n=max - min;
+	
+    }
+	cout << 495;
+	return 0;
+}
