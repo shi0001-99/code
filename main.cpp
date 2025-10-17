@@ -493,3 +493,26 @@ int main() {
     cout << fixed << setprecision(2) << f_iterative(x, n);
     return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+    double a, b, c;
+    cin >> a >> b >> c;
+    if (a > b)swap(a, b);
+    if (b > c)swap(b, c);
+    if (a > b)swap(a, b);
+    if (a + b <= c) {
+        cout << "No solution.";
+        return 0;
+    }
+    double p = (a + b + c) / 2;
+    double ss = p * (p - a) * (p - b) * (p - c);
+    double s = sqrt(ss);
+    cout << fixed << setprecision(2) << s;
+    return 0;
+}
