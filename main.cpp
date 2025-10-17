@@ -472,3 +472,24 @@ int main() {
     cout << combination(n, r);
     return 0;
 }
+
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+double f_iterative(double x, double n) {
+    double result = (double)x / (1 + x);  // n=1 的情况
+    for (int i = 2; i <= n; i++) {
+        result = (double)x / (i + result);
+    }
+    return result;
+}
+
+int main() {
+    double x, n;
+    cin >> x >> n;
+    cout << fixed << setprecision(2) << f_iterative(x, n);
+    return 0;
+}
