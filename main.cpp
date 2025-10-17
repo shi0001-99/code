@@ -516,3 +516,26 @@ int main() {
     cout << fixed << setprecision(2) << s;
     return 0;
 }
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    bool flag=false;
+    if(n%4==0){
+        flag=true;
+        
+}
+    if(n%100==0)
+        flag=false;
+    if(n%400==0)
+        flag=true;
+    if( flag){
+        cout<<"Y";
+    }
+    else
+        cout<<"N";
+    return 0;
+}
