@@ -539,3 +539,26 @@ int main(){
         cout<<"N";
     return 0;
 }
+
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    int sum = 0;
+    int count = 0;
+    for (int i = 1; i <= n; i++) {
+        if (i % k == 0) {
+            sum += i;
+            count++;
+        }
+    }
+    int sum2 = (1 + n) * n / 2-sum;
+    cout <<fixed<<setprecision(1) <<sum * 1.0 / count <<" " << sum2 * 1.0 / (n - count);
+    return 0;
+}
