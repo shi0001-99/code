@@ -582,3 +582,39 @@ int main() {
 
     return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<string>
+using namespace std;
+bool isPalindrome(int x) {
+    string str = to_string(x);
+    string reversed = str;
+    reverse(reversed.begin(), reversed.end());
+
+    return str == reversed;
+}
+bool is_prime(int n) {
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+int main() {
+    int a, b;
+    cin >> a >> b;
+    for (int i = a; i <= b; i++) {
+        if (i % 2 != 0) {
+            if (isPalindrome(i)) {
+                if (is_prime(i))
+                    cout << i << endl;
+            }
+        }
+    }
+    return 0;
+}
