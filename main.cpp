@@ -645,3 +645,27 @@ int main() {
     cout << f(a);
     return 0;
 }
+
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main() {
+    int arr[1000];
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    sort(arr, arr + n);
+    int sum=0;
+    for (int i = 1; i < n-1; i++) {
+        sum += arr[i];
+    }
+    cout << fixed << setprecision(2) << sum * 1.0 / (n - 2);
+    return 0;
+}
