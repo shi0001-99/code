@@ -562,3 +562,5 @@ int main() {
     cout <<fixed<<setprecision(1) <<sum * 1.0 / count <<" " << sum2 * 1.0 / (n - count);
     return 0;
 }
+
+
