@@ -564,3 +564,21 @@ int main() {
 }
 
 
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+    int arr[105];
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> arr[i];
+    }
+    sort(arr + 1, arr + n+1);
+    cout << arr[1];
+
+    return 0;
+}
