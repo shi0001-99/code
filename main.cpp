@@ -801,3 +801,23 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main() {
+	double a = 2;
+	double sum = 0;
+	double s;
+	cin >> s;
+	int count = 0;
+	for (int i=0; sum < s; i++) {
+		sum += a;
+		a = a * 0.98;
+		count+=1;
+	}
+	cout << count ;
+	return 0;
+}
