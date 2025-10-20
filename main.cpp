@@ -880,4 +880,4 @@ int main() {
 }
 
 
-interesting
+int a;
