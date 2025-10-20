@@ -847,3 +847,34 @@ int main() {
     cout << f(a);
     return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int a;
+    cin >> a;
+    int num = 1;
+    int max = -1;
+    for (int i = 1; i < n; i++) {
+        int temp = a;
+        cin >> a;
+        if (a == temp+1) {
+            num++;
+        }
+        if (max < num) {
+            max = num;
+        }
+        if(a!=temp+1) {
+            num = 1;
+        }
+    }
+    cout << max;
+    return 0;
+}
