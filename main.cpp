@@ -821,3 +821,29 @@ int main() {
 	cout << count ;
 	return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<string>
+using namespace std;
+int f(int n) {
+    int final=0;
+    if (n >= 0) {
+        while (n != 0) {
+            final = final * 10 + n % 10;
+            n /= 10;
+        }
+        return final;
+    }
+    else {
+        return -f(-n);
+    }
+}
+int main() {
+    int a;
+    cin >>a ;
+    cout << f(a);
+    return 0;
+}
