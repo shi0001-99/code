@@ -669,3 +669,31 @@ int main() {
     cout << fixed << setprecision(2) << sum * 1.0 / (n - 2);
     return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int c = 1;
+    for (int i = n; i >=1; i--) {
+        for (int j = 1; j <= i; j++) {
+
+            if (c < 10) {
+                cout << 0 << c;
+                c++;
+            }
+            else {
+                cout << c;
+                c++;
+            }
+        }
+        cout << endl;
+        
+    }
+    return 0;
+}
