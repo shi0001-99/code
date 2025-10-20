@@ -697,3 +697,84 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    // 高精度变量定义：
+    vector<int> sum2 = {0};  // 阶乘和，初始为0（低位在前，如0的存储是[0]）
+    vector<int> sum1 = {1};  // 当前阶乘i!，初始为1! = 1（存储为[1]）
+    
+    // 计算1!+2!+…+n!
+    for (int i = 1; i <= n; i++) {
+        // 步骤1：计算i! = (i-1)! * i（更新sum1）
+        int carry = 0;  // 进位
+        for (int j = 0; j < sum1.size(); j++) {
+            long long product = (long long)sum1[j] * i + carry;  // 防止中间结果溢出
+            sum1[j] = product % 10;  // 保留当前位
+            carry = product / 10;    // 计算进位
+        }
+        // 处理剩余进位
+        while (carry > 0) {
+            sum1.push_back(carry % 10);
+            carry /= 10;
+        }
+        
+        // 步骤2：将i!加到sum2中（更新sum2）
+        carry = 0;
+        int k = 0;
+        while (k < sum1.size() || k < sum2.size() || carry > 0) {
+            int digit1 = (k < sum1.size()) ? sum1[k] : 0;  // sum1的第k位（低位）
+            int digit2 = (k < sum2.size()) ? sum2[k] : 0;  // sum2的第k位（低位）
+            int total = digit1 + digit2 + carry;           // 当前位总和
+            if (k < sum2.size()) {
+                sum2[k] = total % 10;  // 更新sum2的第k位
+            } else {
+                sum2.push_back(total % 10);  // 扩展sum2的长度
+            }
+            carry = total / 10;  // 计算进位
+            k++;
+        }
+    }
+    
+    // 输出结果（从高位到低位）
+    for (int i = sum2.size() - 1; i >= 0; i--) {
+        cout << sum2[i];
+    }
+    cout << endl;
+    
+    return 0;
+}
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int f(int n,int x) {
+    int count=0;
+    int temp = n;
+    while (temp != 0) {
+        int s = temp % 10;
+        if (s == x) {
+            count++;
+        }
+        temp /= 10;
+    }    
+    return count;
+}
+int main() {
+    int n, x;
+    cin >> n >> x;
+    int final=0;
+    for (int i = 1; i <= n; i++) {
+        final += f(i,x);
+    }
+    cout << final;
+    return 0;
+}
