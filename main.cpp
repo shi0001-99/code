@@ -880,4 +880,42 @@ int main() {
 }
 
 
-int a;
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+#include<string>
+using namespace std;
+
+int main() {
+    int arr[1000];
+    int n;
+    cin >>n ;
+    arr[0] = n;
+    int num = 1;
+    if (n == 1) {
+        cout << 1;
+        return 0;
+    }
+    else {
+        for (int i = 1;; i++) {
+            if (n % 2 == 0) {
+                arr[i] = n / 2;
+                n /= 2;
+            }
+            else {
+                arr[i] = n * 3 + 1;
+                n = n * 3 + 1;
+            }
+            num++;
+            if (arr[i] == 1)
+                break;
+
+        }
+    }
+    for (int i = num - 1; i >= 0; i--) {
+        cout << arr[i]<<" ";
+    }
+
+    return 0;
+}
