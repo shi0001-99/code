@@ -969,3 +969,31 @@ int main() {
 	}
 	return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+	int n, m;
+	cin >> n >> m;
+	int arr1[105];
+	for (int i = 0; i < n; i++) {
+		int arr[21];
+		for (int j = 0; j < m; j++) {
+			cin >> arr[j];
+		}
+		sort(arr, arr + m);
+		int sum = 0;
+		for (int k = 1; k < m - 1; k++) {
+			sum += arr[k];
+		}
+		arr1[i] = sum;
+
+	}
+	sort(arr1, arr1 + n);
+	cout << fixed << setprecision(2) << (double)arr1[n-1]/(m-2);
+	return 0;
+}
