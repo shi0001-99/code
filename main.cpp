@@ -997,4 +997,4 @@ int main() {
 	cout << fixed << setprecision(2) << (double)arr1[n-1]/(m-2);
 	return 0;
 }
-3
+35
