@@ -920,3 +920,20 @@ int main() {
     return 0;
 }
 
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+double fun(double x, double y,double x1,double y1) {
+	double ss = (x - x1) * (x - x1) + (y - y1) * (y - y1);
+	double s = sqrt(ss);
+	return s;
+}
+int main() {
+	double a, b, c, d, e, f;
+	cin >> a >> b >> c >> d >> e >> f;
+	double sum = fun(a, b, c, d) + fun(c,d,e,f) + fun(a, b, e, f);
+	cout << fixed << setprecision(2) << sum;
+	return 0;
+}
