@@ -1029,3 +1029,30 @@ int main() {
 
 	return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cin >> n;
+	string nrr[1005];
+	int arr[1005], brr[1005], crr[1005];
+
+	for (int i = 0; i < n; i++) {
+		cin >> nrr[i] >> arr[i] >> brr[i] >> crr[i];
+
+	}
+	for (int i = 0; i < n-1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (abs(arr[i] - arr[j]) <= 5 && abs(brr[i] - brr[j]) <= 5 && abs(crr[i] - crr[j]) <= 5 && abs(arr[i] + brr[i] + crr[i] - arr[j] - brr[j] - crr[j]) <= 10)
+				cout << nrr[i] << " " << nrr[j] << endl;
+		}
+	}
+
+	return 0;
+}
