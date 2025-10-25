@@ -1086,3 +1086,84 @@ int main() {
     }
     return 0;
 }
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+bool nf(int a, int b, int c) {
+    if (a + b <= c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+bool rf(int a, int b, int c) {
+    if (a * a + b * b == c * c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+bool af(int a, int b, int c) {
+    if (a * a + b * b > c * c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+bool of(int a, int b, int c) {
+    if (a * a + b * b < c * c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+bool itf(int a, int b, int c) {
+    if (a==b||b==c||a==c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+bool ef(int a, int b, int c) {
+    if (a==c) {
+        return 1;
+    }
+    else
+        return 0;
+}
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    if (a > b) {
+        swap(a, b);
+    }
+    if (b > c) {
+        swap(b, c);
+    }
+    if (a > b) {
+        swap(a, b);
+    }
+    if (nf(a, b, c)) {
+        cout << "Not triangle"<<endl;
+        return 0;
+    }
+    if (rf(a, b, c)) {
+        cout << "Right triangle" << endl;
+    }
+    if (af(a, b, c)) {
+        cout << "Acute triangle" << endl;
+    }
+    if (of(a, b, c)) {
+        cout << "Obtuse triangle" << endl;
+    }
+    if (itf(a, b, c)) {
+        cout << "Isosceles triangle" << endl;
+    }
+    if (ef(a, b, c)) {
+        cout << "Equilateral triangle";
+    }
+    return 0;
+}
