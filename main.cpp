@@ -997,4 +997,35 @@ int main() {
 	cout << fixed << setprecision(2) << (double)arr1[n-1]/(m-2);
 	return 0;
 }
-356
+
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+	int chin, math, eng,a,b,c;
+	string name,top;
+	int n;
+	cin >> n;
+	cin >> name;
+	top = name;
+	
+	cin >> chin >> math >> eng;
+	a = chin, b = math, c = eng;
+	int temp = chin + math + eng;
+	for (int i = 1; i < n; i++) {
+		cin >> name;
+		cin >> chin >> math >> eng;
+		if (chin + math + eng > temp) {
+			top = name;
+			a = chin, b = math, c = eng;
+
+		}
+		temp = a + b + c;
+	}
+	cout << top << " " << a << " " << b << " " << c;
+
+	return 0;
+}
