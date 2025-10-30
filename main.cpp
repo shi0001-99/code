@@ -1251,7 +1251,23 @@ int main(){
 }
 
 
-12356889
-123345678900
-123456789
-12245678
+#include<iostream>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	int dp[1001] = { 0 };
+	dp[0] = 1;
+	int coin = 1;
+	while (coin <= n) {
+		for (int i = coin; i <= n; i++) {
+			dp[i] += dp[i - coin];
+		}
+		coin *= 2;
+	}
+	cout << dp[n];
+	return 0;
+}
