@@ -1272,7 +1272,31 @@ int main() {
 	return 0;
 }
 
-12345678
-12345678
-12345678
-123456
+#include<iostream>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+int Sumup(int n) {
+    int sum = 0;
+    while (n != 0){
+        int a = n % 10;
+        sum += a;
+        n /= 10;
+    }
+    return sum;
+}
+int main() {
+    int n;
+    cin >> n;
+    int max = -1;
+    for (int i = 0; i < n; i++) {
+        int a;
+        cin >> a;
+        int temp = Sumup(a);
+        if (temp > max) {
+            max = temp;
+        }
+    }
+    cout << max;
+    return 0;
+}
