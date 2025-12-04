@@ -1322,4 +1322,4 @@ int main() {
 	cout << str;
 	return 0;
 }
-123
+1234
