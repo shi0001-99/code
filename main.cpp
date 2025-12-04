@@ -1301,6 +1301,24 @@ int main() {
     return 0;
 }
 
-123456789
-123456789
-123456789
+#include<iostream>
+#include<string>
+#include<ranges>
+#include<algorithm>
+using namespace std;
+
+void Reverse(char x[]) {
+	char* ph = x, * pt;
+	for (pt = ph; (*pt) != '\0'; pt++);
+	for (--pt; ph < pt; ph++, pt--) {
+		char temp = *ph;
+		*ph = *pt;
+		*pt = temp;
+	}
+}
+int main() {
+	char str[] = "hello world";
+	Reverse(str);
+	cout << str;
+	return 0;
+}
