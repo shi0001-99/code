@@ -1346,3 +1346,22 @@ int main() {
     cout << "str2是" << str2;
     return 0;
 }
+
+\\字符串长度
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+int changdu(char x[]) {
+    int i = 0;
+    while (x[i] != '\0')
+        i++;
+    return i;
+}
+int main() {
+    char str[] = "hello123";
+    int a = changdu(str);
+    cout << a;
+    return 0;
+}
