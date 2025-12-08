@@ -1390,3 +1390,30 @@ int main() {
     cout << "str2是" << str2;
     return 0;
 }
+
+\\字符串的连接
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+void pinjie(char x[], char y[]) {
+    int i = 0;
+    while (x[i] != '\0') {
+        i++;
+    }
+    int n = sizeof(y) / sizeof(y[0]);
+    for (int j = 0; j < n; j++) {
+        x[i + j] = y[j];
+    }
+    x[i + n] = '\0';
+}
+int main() {
+    
+    char str1[1000];
+    char str2[1000];
+    cin >> str1 >> str2;
+    pinjie(str1, str2);
+    cout << str1;
+    return 0;
+}
