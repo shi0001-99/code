@@ -1343,6 +1343,6 @@ int main() {
     char str2[1000];
     cin >> str1;
     fuzhi(str1, str2);
-    cout << "str2是：" << str2;
+    cout << "str2是" << str2;
     return 0;
 }
