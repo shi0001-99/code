@@ -1365,3 +1365,28 @@ int main() {
     cout << a;
     return 0;
 }
+
+\\复制前n个元素
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+void fuzhi(char x[], char y[],int n) {
+    int i = 0;
+    while (x[i] != '\0' &&i<n) {
+        y[i] = x[i];
+        i++;
+    }
+    y[i] = '\0';
+}
+int main() {
+    int n;
+    cin >> n;
+    char str1[1000];
+    char str2[1000];
+    cin >> str1;
+    fuzhi(str1, str2,n);
+    cout << "str2是" << str2;
+    return 0;
+}
