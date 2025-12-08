@@ -1347,6 +1347,29 @@ int main() {
     return 0;
 }
 
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+void fuzhi(char* t, char* s) {
+    while ((*s) != '\0') {
+        *t = *s;
+        ++t;
+        ++s;
+    }
+    *t = *s;
+}
+int main() {
+    
+    char str1[1000];
+    char str2[1000];
+    cin >> str1 ;
+    fuzhi(str2, str1);
+    cout << str2;
+    return 0;
+}
+
 \\字符串长度
 #include<iostream>
 #include<cstring>
