@@ -1323,4 +1323,26 @@ int main() {
 	return 0;
 }
 
-1234567
+
+\\字符串的拷贝
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+void fuzhi(char x[],char y[]) {
+    int i = 0;
+    while (x[i] != '\0') {
+        y[i] = x[i];
+        i++;
+    }
+    y[i] = '\0';
+}
+int main() {
+    char str1[1000];
+    char str2[1000];
+    cin >> str1;
+    fuzhi(str1, str2);
+    cout << "str2是：" << str2;
+    return 0;
+}
