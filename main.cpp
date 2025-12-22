@@ -1508,3 +1508,51 @@ int main() {
     }
     Print(head);
 }
+
+#include <iostream>
+#include <string> 
+using namespace std;
+
+int main() {
+    int m, n;
+    cin>> m >> n;
+    int map[50][50];
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cin>> map[i][j];
+        }
+    }
+    bool changed;
+    do {
+        changed = false;       
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (map[i][j] == 1) {             
+                    if (i > 0 && map[i - 1][j] == 0) {
+                        map[i - 1][j] = 1;
+                        changed = true;
+                    }
+                    if (i < m - 1 && map[i + 1][j] == 0) {
+                        map[i + 1][j] = 1;
+                        changed = true;
+                    }
+                    if (j > 0 && map[i][j - 1] == 0) {
+                        map[i][j - 1] = 1;
+                        changed = true;
+                    }
+                    if (j < n - 1 && map[i][j + 1] == 0) {
+                        map[i][j + 1] = 1;
+                        changed = true;
+                    }
+                }
+            }
+        }
+    } while (changed);
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout<< map[i][j] << " ";
+        }
+        cout<< endl;
+    }
+    return 0;
+}
