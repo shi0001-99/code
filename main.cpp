@@ -1441,6 +1441,70 @@ int main() {
     return 0;
 }
 
-1234567
-1234567
-1234567
+
+#include <iostream>
+#include <string> 
+using namespace std;
+typedef struct Point {
+    int lon;
+    Point* next;
+}Pt;
+bool flag = false;
+Pt* Create() {
+    Pt* head = NULL;
+    int lon;
+    
+    cin >> lon; 
+    while (lon != -1) {
+        Pt* prev = NULL, * curr = head;
+        Pt* p = new Pt;
+        while (curr && curr->lon < lon) {
+            prev = curr;
+            curr = curr->next;
+        }
+        if (lon == 0) {
+            cin >> lon;
+            flag = true;
+            continue;
+        }
+        p->lon = lon;
+        p->next = curr;
+        if (prev == NULL) {
+            head = p;
+        }
+        else {
+            prev->next = p;
+        }
+        cin >> lon;
+    }
+    return head;
+}
+
+void Print(Pt* head) {
+    if (head == NULL) {
+        return;
+    }
+    while (head) {
+        cout << head->lon << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+Pt* Fix(Pt* head) {
+    Pt* curr=head,*prev=NULL;
+    while (curr->next != NULL) {
+        prev = curr;
+        curr = curr->next;
+    }
+    prev->next = NULL;
+    delete curr;
+    return head;
+}
+int main() {
+    Pt* head = Create();
+    if (not flag) {
+        head = Fix(head);
+    }
+    Print(head);
+}
