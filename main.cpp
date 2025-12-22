@@ -1556,3 +1556,52 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+    int r;
+    char str[301];  
+    
+    cin >> r;
+    cin >> str;
+    
+    int len = strlen(str);
+
+    if (len % r != 0) {
+        cout << "N" << endl;
+        return 0;
+    }  
+    int cols = len / r;
+    char matrix[150][300];
+    
+    // 按列填充（点睛之笔，直接算出来元素在数组里面的位置）
+    for (int i = 0; i < len; i++) {
+        int row = i % r;
+        int col = i / r;
+        matrix[row][col] = str[i];
+    }
+
+    for (int row = 0; row < r; row++) {
+        char first_char = matrix[row][0];
+        for (int col = 1; col < cols; col++) {
+            if (matrix[row][col] != first_char) {
+                cout << "N" << endl;
+                return 0;
+            }
+        }
+    }
+    
+    // 输出结果
+    for (int row = 0; row < r; row++) {
+        for (int col = 0; col < cols; col++) {
+            cout << matrix[row][col];
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
